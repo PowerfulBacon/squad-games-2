@@ -12,7 +12,7 @@ public class JoinInstructions : MonoBehaviour
     private const string MESSAGE = "Join the squad games!\nGo to <b>%GAME_LINK</b> and connect to:\n<b>%IP_ADDRESS</b>\nWhile connected to the same WiFi";
     
     //Link to the game page
-    private const string GAME_LINK = "powerfulbacon.itch.io/squad-games-2";
+    private const string GAME_LINK = "powerfulbacon.github.io/squad-games-2";
     
     //The text mesh we are linked to
     [SerializeField]
