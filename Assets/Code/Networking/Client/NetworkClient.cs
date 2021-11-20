@@ -72,6 +72,14 @@ public class NetworkClient : NetworkBase
         Debug.Log("Attempting connection...");
     }
 
+    public void SendMessage(string header, string data = "")
+    {
+        //Encode the message
+        byte[] usernameByteArray = Encoding.UTF8.GetBytes($"{header} {data}");
+        //Send the server a message saying we want to connect
+        udpClient.Send(usernameByteArray, usernameByteArray.Length);
+    }
+
     private void TimeoutConnection()
     {
         //Sleep for 5 seconds

@@ -10,4 +10,7 @@ public class MessageHeaders
     //We accepted a join request
     public const string JOIN_ACCEPTED = "JACC";
 
+    //Action
+    public const string CLIENT_ACTION = "CACT";
+
 }

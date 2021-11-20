@@ -33,7 +33,20 @@ public class ConnectedClient
         ipEndPoint = new IPEndPoint(address, port);
         //Get a random colour
         SetRandomColour();
+        //Set the default action button behaviour
+        actionButtonPressed = SetRandomColour;
+        //Client created!
         Debug.Log($"New client registered at {address}:{port}");
+    }
+
+    /// <summary>
+    /// TODO
+    /// Called on death of the client.
+    /// Will change their mobile app to dead mode and prevent playing in the games.
+    /// </summary>
+    public void Death()
+    {
+
     }
 
     /// <summary>

@@ -46,6 +46,9 @@ public class NetworkHost : NetworkBase
                 onClientConnect?.Invoke(this, connectedClients[addressAsString]);
                 Debug.Log($"Client {address} successfully connected");
                 break;
+            case MessageHeaders.CLIENT_ACTION:
+                connectedClients[addressAsString].actionButtonPressed?.Invoke();
+                break;
             default:
                 Debug.LogError($"Unrecognised message header: {header}.");
                 break;

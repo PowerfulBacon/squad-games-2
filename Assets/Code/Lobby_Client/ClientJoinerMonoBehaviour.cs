@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClientJoinerMonoBehaviour : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class ClientJoinerMonoBehaviour : MonoBehaviour
 
     private void ConnectedSuccessfully()
     {
-        DisplayError("Successfully failed to fail to connect to the server!");
+        SceneManager.LoadScene("ButtonScene");
     }
 
     //Weird way to display error messages: TMPs cannot be editted from threads.
