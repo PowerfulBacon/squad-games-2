@@ -20,4 +20,9 @@ public class NetworkMaster : MonoBehaviour
         networkMaster = this;
     }
 
+    private void OnApplicationQuit()
+    {
+        host.Shutdown();
+    }
+
 }

@@ -10,10 +10,7 @@ public class PlayerList : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textMesh;
 
-    private void Start()
-    {
-        //UpdatePlayerList(new List<ConnectedClient>());
-    }
+    private string newMessage;
 
     /// <summary>
     /// Updates the playerlist
@@ -28,7 +25,13 @@ public class PlayerList : MonoBehaviour
             finalMessage = $"{finalMessage}\t<color=#{ColorUtility.ToHtmlStringRGB(client.colour)}>>{client.username}<</color>";
         }
         //Set the text of the message
-        textMesh.text = finalMessage;
+        newMessage = finalMessage;
+    }
+
+    private void Update()
+    {
+        if(newMessage == null) return;
+        textMesh.text = newMessage;
     }
 
 }

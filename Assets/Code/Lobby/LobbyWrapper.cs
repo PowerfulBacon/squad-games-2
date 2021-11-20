@@ -50,6 +50,8 @@ public class LobbyWrapper : MonoBehaviour
         }
     }
 
+    private List<NetworkClient> debugClients = new List<NetworkClient>();
+
     /// <summary>
     /// Creates a fake client and connects them to the server
     /// </summary>
@@ -62,6 +64,18 @@ public class LobbyWrapper : MonoBehaviour
             //Create and connect the client
             NetworkClient client = new NetworkClient(NetworkBase.DEFAULT_SERVER_PORT);
             client.AttemptConnect(IPAddress.Parse(GetLocalIPAddress()), $"Test Client {i}", null, null);
+            debugClients.Add(client);
+        }
+    }
+
+    /// <summary>
+    /// Shutdown the debug clients
+    /// </summary>
+    private void OnApplicationQuit()
+    {
+        foreach(NetworkClient client in debugClients)
+        {
+            client.Shutdown();
         }
     }
 
